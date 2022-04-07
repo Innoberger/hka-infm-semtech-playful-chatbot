@@ -1,0 +1,2 @@
+# exclude macOS stuff
+.DS_Store
