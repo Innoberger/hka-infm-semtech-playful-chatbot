@@ -1,2 +1,4 @@
 # exclude macOS stuff
 .DS_Store
+# exclude intellij stuff
+.idea
