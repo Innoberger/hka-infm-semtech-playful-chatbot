@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "node server.js"
+    "serve": "http-server . -p 3000"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Innoberger/hka-infm-semtech-playful-chatbot#readme",
   "dependencies": {
+    "http-server": "^14.1.0",
     "rivescript": "^2.2.0"
   }
 }
