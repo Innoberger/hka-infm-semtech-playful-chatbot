@@ -1,0 +1,20 @@
+
+// Bot variables
+! var number = 1
+
+
++ [*] play [*]
+- We wil play the game Number Guesser.{topic=random}
+
+> topic random
+
++ init *
+- <set random=<star>> random value saved
+
++ get random
+- <get random> is your current random value
+
++ [*] quit [*]
+- Ok Game OVER{topic=random}
+
+< topic

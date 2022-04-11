@@ -1,12 +1,10 @@
 var bot = new RiveScript();
 var username = "";
-const messages = document.getElementById("messages");
-const botBox = document.getElementById("bot");
 
 // Load a list of files all at once (the best alternative to loadDirectory
 // for the web!)
 bot.loadFile([
-  "brain/not_our_eliza.rive"
+  "brain/our_eliza.rive"
 ]).then(loading_done).catch(loading_error);
 
 // All file loading operations are asynchronous, so you need handlers
@@ -35,21 +33,27 @@ function clickPress(event, element) {
 
     askTheBot(element.value);
     element.value = "";
-    botBox.scrollTop = messages.scrollHeight;
 }
 
 
 function askTheBot(input) {
+
+
     var question = document.createElement("div");
     var answer = document.createElement("div");
 
     question.innerHTML = "You: " + input
+
+    if(input.includes("init")) input = "init " + Math.floor(Math.random() * 10001);
+
     document.getElementById("messages").appendChild(question);
 
     // NOTE: the API has changed in v2.0.0 and returns a Promise now.
     bot.reply(username, input).then(function(reply) {
-        answer.innerHTML = "Bot: " + reply
-        document.getElementById("messages").appendChild(answer);
+        answer.innerHTML = "Bot: " + reply;
+        let messages = document.getElementById("messages")
+        messages.appendChild(answer);
+        document.getElementById("bot").scrollTop = messages.scrollHeight;
     });
 }
 
