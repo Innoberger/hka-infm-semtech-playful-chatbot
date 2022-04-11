@@ -5,7 +5,13 @@
         <link rel="stylesheet" href=".\style.css">
     </head>
     <body>
-        Hello World!
+        <div id="bot" style="visibility: hidden">
+            <div>
+                <input type="text" placeholder="I'm a bot, AMA!" id="input"><br/>
+                <input type="button" onclick="askTheBot(this)" value="Go for it" id="submit">
+            </div>
+            <div id="output"></div>
+        </div>
         <script src="https://unpkg.com/rivescript@latest/dist/rivescript.min.js"></script>
         <script src="chatbot.js"></script>
 
