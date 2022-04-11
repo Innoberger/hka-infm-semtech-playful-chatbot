@@ -1,5 +1,7 @@
 var bot = new RiveScript();
 var username = "";
+const messages = document.getElementById("messages");
+const botBox = document.getElementById("bot");
 
 // Load a list of files all at once (the best alternative to loadDirectory
 // for the web!)
@@ -33,6 +35,7 @@ function clickPress(event, element) {
 
     askTheBot(element.value);
     element.value = "";
+    botBox.scrollTop = messages.scrollHeight;
 }
 
 
