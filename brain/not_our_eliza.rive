@@ -305,6 +305,7 @@
 
 > topic game
 
-
++ [*] quit [*]
+  - Ok Game OVER{topic=random}
 
 < topic
