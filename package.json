@@ -19,7 +19,6 @@
   },
   "homepage": "https://github.com/Innoberger/hka-infm-semtech-playful-chatbot#readme",
   "dependencies": {
-    "http-server": "^14.1.0",
-    "rivescript": "^2.2.0"
+    "http-server": "^14.1.0"
   }
 }
