@@ -6,22 +6,16 @@
     </head>
     <body>
         <div id="bot" style="visibility: hidden">
-            <div>
-                <input type="text" placeholder="I'm a bot, AMA!" id="input"><br/>
-                <input type="button" onclick="askTheBot(this)" value="Go for it" id="submit">
-            </div>
             <div id="output"></div>
+            <div class="chat">
+                <div class="messages"></div>
+                <div id="edges"></div>
+                <div class="actions">
+                    <input type="text" onkeypress="clickPress(event, this)" placeholder="press 'Enter' to send...">
+                </div>
+            </div>
         </div>
         <script src="https://unpkg.com/rivescript@latest/dist/rivescript.min.js"></script>
         <script src="chatbot.js"></script>
-
-        <div class=”chat”>
-            <div class="messages"></div>
-            <div id="edges"></div>
-            <form class="actions">
-                <input type="text" placeholder="press 'Enter' to send...">
-            </form>
-        </div>
-
     </body>
 </html>

@@ -22,9 +22,23 @@ function loading_done() {
     username = "local-user";
 }
 
-function askTheBot(element) {
+function clickPress(event, element) {
+    if (event.keyCode != 13) {
+        return;
+    }
+
+    if (element.value.trim() == "") {
+        return;
+    }
+
+    element.value = "";
+    askTheBot(element.value);
+}
+
+
+function askTheBot(input) {
     // NOTE: the API has changed in v2.0.0 and returns a Promise now.
-    bot.reply(username, element.value).then(function(reply) {
+    bot.reply(username, input).then(function(reply) {
         document.getElementById("output").innerHTML = reply;
     });
 }
