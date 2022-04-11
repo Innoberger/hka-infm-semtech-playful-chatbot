@@ -301,7 +301,7 @@
 - Does using that kind of language make you feel better?
 
 + [*] play [*]
-- We wil play the game Tic Tac Toe.{topic=game}
+- We will play Guess The Number. Type a number between 1 and 10.000.{topic=game}
 
 > topic game
 
