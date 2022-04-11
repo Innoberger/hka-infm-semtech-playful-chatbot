@@ -5,14 +5,11 @@
         <link rel="stylesheet" href=".\style.css">
     </head>
     <body>
-        <div id="bot" style="visibility: hidden">
-            <div id="output"></div>
-            <div class="chat">
-                <div class="messages"></div>
-                <div id="edges"></div>
-                <div class="actions">
-                    <input type="text" onkeypress="clickPress(event, this)" placeholder="press 'Enter' to send...">
-                </div>
+        <div class="chat", id="bot">
+            <div class="messages" id="messages"></div>
+            <div id="edges"></div>
+            <div class="actions">
+                <input type="text" onkeypress="clickPress(event, this)" placeholder="press 'Enter' to send...">
             </div>
         </div>
         <script src="https://unpkg.com/rivescript@latest/dist/rivescript.min.js"></script>

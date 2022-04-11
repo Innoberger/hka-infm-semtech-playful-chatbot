@@ -13,7 +13,7 @@ bot.loadFile([
 // the files have finished loading.
 function loading_done() {
     console.log("Bot has finished loading!");
-    document.getElementById("bot").setAttribute("style", "visibility: visible");
+    document.getElementById("bot").style.visibility = "visible";
 
     // Now the replies must be sorted!
     bot.sortReplies();
@@ -31,15 +31,22 @@ function clickPress(event, element) {
         return;
     }
 
-    element.value = "";
     askTheBot(element.value);
+    element.value = "";
 }
 
 
 function askTheBot(input) {
+    var question = document.createElement("div");
+    var answer = document.createElement("div");
+
+    question.innerHTML = "You: " + input
+    document.getElementById("messages").appendChild(question);
+
     // NOTE: the API has changed in v2.0.0 and returns a Promise now.
     bot.reply(username, input).then(function(reply) {
-        document.getElementById("output").innerHTML = reply;
+        answer.innerHTML = "Bot: " + reply
+        document.getElementById("messages").appendChild(answer);
     });
 }
 

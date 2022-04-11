@@ -8,6 +8,7 @@
     height: 90%;
     position: fixed;
     overflow: scroll;
+    visibility: hidden;
 }
 .actions {
     position: fixed;
