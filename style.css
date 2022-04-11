@@ -43,3 +43,12 @@
     margin-left: auto;
     background: #DDD
 }
+.messages .author {
+    text-transform: uppercase;
+    font-size: 70%;
+    color: grey;
+    margin: 0
+}
+.messages .message {
+    margin-bottom: 5pt
+}

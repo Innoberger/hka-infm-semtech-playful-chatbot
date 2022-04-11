@@ -305,7 +305,11 @@
 
 > topic game
 
-+ [*] quit [*]
-  - Ok Game OVER{topic=random}
++ #
+- <star> > <bot num> => Pick a lower number!
+- <star> < <bot num> => Pick a higher number!
+- <star> == <bot num> => Congrats, you're right!
 
++ [*] quit [*]
+  - Ok Game over {topic=random}
 < topic

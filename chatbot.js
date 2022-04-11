@@ -35,22 +35,36 @@ function clickPress(event, element) {
     element.value = "";
 }
 
+function chatElement(isBot, message) {
+    let author = isBot ? "Bot" : "You";
+    let wrapperClass = isBot ? "bot" : "self"
+
+    let wrapper = document.createElement("div");
+    let authorElement = document.createElement("p")
+    let messageElement = document.createElement("p")
+
+    wrapper.className = wrapperClass;
+
+    authorElement.className = "author"
+    authorElement.innerHTML = author;
+
+    messageElement.className = "message"
+    messageElement.innerHTML = message;
+
+    wrapper.appendChild(authorElement);
+    wrapper.appendChild(messageElement);
+
+    return wrapper;
+}
 
 function askTheBot(input) {
+    let question = chatElement(false, input);
 
-
-    var question = document.createElement("div");
-    var answer = document.createElement("div");
-
-    question.innerHTML = "You: " + input
-
+    document.getElementById("messages").appendChild(question)
     if(input.includes("init")) input = "init " + Math.floor(Math.random() * 10001);
-
-    document.getElementById("messages").appendChild(question);
-
     // NOTE: the API has changed in v2.0.0 and returns a Promise now.
     bot.reply(username, input).then(function(reply) {
-        answer.innerHTML = "Bot: " + reply;
+        let answer = chatElement(true, reply);
         let messages = document.getElementById("messages")
         messages.appendChild(answer);
         document.getElementById("bot").scrollTop = messages.scrollHeight;
