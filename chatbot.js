@@ -57,13 +57,24 @@ function chatElement(isBot, message) {
     return wrapper;
 }
 
-function askTheBot(input) {
-    let question = chatElement(false, input);
+function askTheBot(input, suppressIO = false) {
+    let question;
 
-    document.getElementById("messages").appendChild(question)
-    if(input.includes("init")) input = "init " + Math.floor(Math.random() * 10001);
+    if (!suppressIO) {
+        question = chatElement(false, input);
+        document.getElementById("messages").appendChild(question)
+    }
+
     // NOTE: the API has changed in v2.0.0 and returns a Promise now.
     bot.reply(username, input).then(function(reply) {
+        //console.log(input + "     " + reply)
+
+        if (input.includes("play")) {
+            askTheBot("init " + (Math.floor(Math.random() * 10000) + 1), true);
+        }
+
+        if (suppressIO) return;
+
         let answer = chatElement(true, reply);
         let messages = document.getElementById("messages")
         messages.appendChild(answer);

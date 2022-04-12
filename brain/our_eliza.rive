@@ -2,9 +2,9 @@
 ! var number = 1
 
 + [*] play [*]
-- We will play the game Number Guesser.{topic=random}
+- We will play the game Number Guesser. Type a number between 1 and 10000.{topic=game}
 
-> topic random
+> topic game
 
 + init #
 - <set random=<star>> random value saved
@@ -15,7 +15,7 @@
 + #
 * <star> >  <get random> => Pick a lower number!
 * <star> <  <get random> => Pick a higher number!
-* <star> == <get random> => Congrats, you're right!
+* <star> == <get random> => Congrats, you're right! You may ask to play again.{topic=random}
 
 + [*] quit [*]
 - Ok Game OVER{topic=random}
