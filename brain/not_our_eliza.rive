@@ -1,4 +1,5 @@
 // A generic set of chatting responses. This set mimics the classic Eliza bot.
+// This is taken from https://github.com/aichaos/rivescript-js/blob/master/eg/brain/eliza.rive
 
 + *
 - I'm not sure I understand you fully.
